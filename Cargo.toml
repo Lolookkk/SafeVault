@@ -1,0 +1,31 @@
+[package]
+name = "safevault"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# Pour la dérivation de clé avec Argon2id
+argon2 = { version = "0.5", features = ["std"] }
+
+# Pour le chiffrement symétrique authentifié AES-256-GCM
+aes-gcm = "0.10"
+
+# Pour générer des nombres aléatoires cryptographiquement sûrs (Salts, Nonces)
+rand = "0.8"
+
+# Optionnel mais recommandé pour manipuler les erreurs proprement
+thiserror = "1.0"
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.150"
+
+
+eframe = "0.26"
+egui = "0.26"
+uuid = {version = "1.23.4", features = ["v4"] }
+
+# Pour le serveur HTTP et l'asynchronisme
+axum = "0.7"
+tokio = { version = "1.0", features = ["full"] }
+tower-http = { version = "0.5", features = ["cors"] } # Nécessaire pour autoriser l'extension navigateur
+
+
